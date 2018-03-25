@@ -1,0 +1,2 @@
+export const USERS_LOAD = 'USERS/USERS_LOAD'
+export const USERS_LOADED = 'USERS/USERS_LOADED'
