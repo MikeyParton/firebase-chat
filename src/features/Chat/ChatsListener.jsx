@@ -2,8 +2,10 @@ import React from 'react'
 import { database } from 'app/firebase'
 import { connect } from 'react-redux'
 import { chatAdded } from './chatActions'
+import MessagesListener from 'features/Messages/MessagesListener'
 
 const mapState = (state) => ({
+  chats: [],
   currentUser: state.auth.currentUser
 })
 
@@ -32,7 +34,10 @@ class ChatsListener extends React.Component {
   }
 
   render() {
-    return null
+    const { chats } = this.props
+    return chats.map((chat) => (
+      <MessagesListener chatId={chat.id} />
+    ))
   }
 }
 
