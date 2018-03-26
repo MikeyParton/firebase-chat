@@ -1,4 +1,4 @@
-import createReducer from 'utils/createReducer'
+import { createReducer } from 'utils/reducerUtils'
 import { USERS_LOADED } from '../usersConstants'
 
 export default createReducer(true, {

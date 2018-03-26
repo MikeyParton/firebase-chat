@@ -4,6 +4,7 @@ import { loggedIn, loggedOut } from 'features/Auth/authActions'
 import Chat from 'features/Chat/Chat'
 import ChatsListener from 'features/Chat/ChatsListener'
 import Users from 'features/Users/Users'
+import Bookings from 'features/Bookings/Bookings'
 import { Nav, PageWrapper, Content } from './styled'
 
 const mapState = (state) => ({
@@ -25,6 +26,7 @@ class Page extends React.Component {
         <Content>
           <Users />
           {currentUser && <Chat currentUser={currentUser} />}
+          {currentUser && <Bookings />}
           {currentUser && <ChatsListener currentUser={currentUser} />}
         </Content>
       </PageWrapper>

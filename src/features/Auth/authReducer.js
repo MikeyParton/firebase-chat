@@ -1,4 +1,4 @@
-import createReducer from 'utils/createReducer'
+import { createReducer } from 'utils/reducerUtils'
 import {
   AUTH_LOADING,
   LOGGED_IN,

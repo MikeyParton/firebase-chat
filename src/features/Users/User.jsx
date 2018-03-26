@@ -1,8 +1,9 @@
 import React from 'react'
 import { login, logout } from 'features/Auth/authActions'
 import { addChat } from 'features/Chat/chatActions'
-import { UserWrapper } from './styled'
+import { UserWrapper, Avatar } from './styled'
 import { connect } from 'react-redux'
+import { FlexDaddy, Paddington } from 'shared/styled'
 
 const mapState = (state) => ({
   currentUser: state.auth.currentUser
@@ -20,6 +21,7 @@ const User = ({
   logout,
   currentUser,
   name,
+  avatar,
   business,
   login,
   firebase_token
@@ -27,28 +29,35 @@ const User = ({
   const loggedIn = currentUser == id
   return (
     <UserWrapper>
-      <b>{name}</b>
-      {business && <span>{business.name}</span>}
-      {!currentUser && (
-        <button onClick={() => login(firebase_token)}>
-          Login
-        </button>
-      )}
+      <Paddington m={15}>
+        <FlexDaddy justifyCenter>
+          <Avatar src={avatar} />
+        </FlexDaddy>
+        <Paddington mt={15}>
+          <div>{name}</div>
+          {business && <div>{business.name}</div>}
+          {!currentUser && (
+            <button onClick={() => login(firebase_token)}>
+              Login
+            </button>
+          )}
 
-      {/* When the user is logged in */}
-      {loggedIn && <span>(Logged In)</span>}
-      {loggedIn && (
-        <button onClick={() => logout()}>
-          Logout
-        </button>
-      )}
+          {/* When the user is logged in */}
+          {loggedIn && <div>(Logged In)</div>}
+          {loggedIn && (
+            <button onClick={() => logout()}>
+              Logout
+            </button>
+          )}
 
-      {/* When the user is available for chat */}
-      {!loggedIn && (
-        <button onClick={() => addChat(currentUser, id)}>
-          New Chat
-        </button>
-      )}
+          {/* When the user is available for chat */}
+          {!loggedIn && (
+            <button onClick={() => addChat(currentUser, id)}>
+              New Chat
+            </button>
+          )}
+        </Paddington>
+      </Paddington>
     </UserWrapper>
   )
 }

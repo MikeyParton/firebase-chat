@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 import User from './User'
 import { loadUsers } from './usersActions'
 import { Paddington, FlexDaddy } from 'shared/styled'
+import { getUsers } from './usersSelectors'
 
 const mapState = (state) => ({
-  users: state.users.data
+  users: getUsers(state)
 })
 
 const actions = { loadUsers }
@@ -21,7 +22,7 @@ class Users extends React.Component {
       <Paddington px={8} py={8}>
         <FlexDaddy>
           {users.map(user => (
-            <User {...user}/>
+            <User {...user }/>
           ))}
         </FlexDaddy>
       </Paddington>

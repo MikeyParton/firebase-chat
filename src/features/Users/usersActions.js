@@ -1,5 +1,7 @@
 import { USERS_LOAD, USERS_LOADED } from './usersConstants'
 import { usersUrl } from 'app/api'
+import { normalize } from 'normalizr'
+import { responseSchema } from './usersSchema'
 
 export const loadUsers = () => (
   (dispatch) => {
@@ -7,7 +9,8 @@ export const loadUsers = () => (
     fetch(usersUrl)
       .then(res => res.json())
       .then(res => {
-        dispatch(usersLoaded(res))
+        const { users } = normalize(res, responseSchema).entities
+        dispatch(usersLoaded(users))
       })
   }
 )

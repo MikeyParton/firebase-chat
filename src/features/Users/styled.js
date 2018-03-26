@@ -5,9 +5,14 @@ export const UserWrapper = styled.div`
   height: 200px;
   width: 200px;
   margin-right: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  text-align: center;
+`
+
+export const Avatar = styled.div`
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background: url(${props => props.src});
+  background-size: cover;
+  background-position: center 0;
 `
