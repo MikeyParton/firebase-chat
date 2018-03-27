@@ -107,7 +107,7 @@ class Chat extends React.Component {
             </form>
             </FlexBoy>
             <FlexBoy shrink={0}>
-              <ISend />
+              <ISend onClick={this.handleSubmit} />
             </FlexBoy>
           </Footer>
         )}

@@ -1,8 +1,8 @@
 import React from 'react'
 import { login, logout } from 'features/Auth/authActions'
-import { UserWrapper, Avatar } from './styled'
+import { UserWrapper } from './styled'
 import { connect } from 'react-redux'
-import { FlexDaddy, Paddington } from 'shared/styled'
+import { FlexDaddy, Paddington, Avatar } from 'shared/styled'
 
 const mapState = (state) => ({
   currentUser: state.auth.currentUser
@@ -28,7 +28,7 @@ const User = ({
     <UserWrapper>
       <Paddington m={15}>
         <FlexDaddy justifyCenter>
-          <Avatar src={avatar} />
+          <Avatar big src={avatar} />
         </FlexDaddy>
         <Paddington mt={15}>
           <div>{name}</div>

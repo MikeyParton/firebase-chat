@@ -19,6 +19,10 @@ export const Header = styled.div`
   display: flex;
   padding: 0 8px;
   align-items: center;
+
+  svg {
+    cursor: pointer;
+  }
 `
 
 export const MessageWindow = styled.div`
@@ -36,6 +40,11 @@ export const Footer = styled.div`
   padding: 0 8px;
   display: flex;
   align-items: center;
+  background-color: white;
+
+  svg {
+    cursor: pointer;
+  }
 `
 
 export const MsgWrapper = styled.div`
@@ -46,7 +55,6 @@ export const MsgWrapper = styled.div`
   height: 30px;
   border-radius: 15px;
   max-width: 230px;
-
 
   ${({isMine, theme}) => (
     isMine ? `
@@ -64,14 +72,12 @@ export const OuterMsgWrapper = styled.div`
   &:first-child {
     margin-top: 20px;
   }
-
 `
 
 export const MsgInput = styled.input`
   width: 100%;
   border-style: none;
   font-size: 14px;
-  background-color: white;
 
   &:focus {
     outline:0;

@@ -23,3 +23,16 @@ export const FlexBoy = styled.div`
   ${({grow}) => grow ? `flex-grow: ${grow};` : ''}
   ${({shrink}) => shrink ? `flex-shrink: ${shrink};` : ''}
 `
+
+export const Avatar = styled.div`
+  height: 30px;
+  width: 30px;
+  ${({big}) => big && `
+    height: 100px;
+    width: 100px;
+  `}
+  border-radius: 50px;
+  background: url(${props => props.src});
+  background-size: cover;
+  background-position: center 0;
+`
