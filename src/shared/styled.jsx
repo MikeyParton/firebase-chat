@@ -16,6 +16,7 @@ export const FlexDaddy = styled.div`
   ${({column}) => column ? `flex-direction: column;` : ''}
   ${({alignCenter}) => alignCenter ? `align-items: center;` : ''}
   ${({justifyCenter}) => justifyCenter ? `justify-content: center;` : ''}
+  ${({justifyEnd}) => justifyEnd ? `justify-content: flex-end;` : ''}
 `
 
 export const FlexBoy = styled.div`

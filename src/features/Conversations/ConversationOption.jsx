@@ -1,10 +1,24 @@
 import React from 'react'
 import withResource from 'shared/withResource'
+import { setCurrentConversation } from './conversationsActions'
+import { ConversationOptionWrapper } from './styled'
 
-const ConversationOption = (props) => {
+const ConversationOption = ({
+  id,
+  users,
+  active,
+  setCurrentConversation
+}) => {
   return (
-    <li>Option</li>
+    <ConversationOptionWrapper
+      active={active}
+      onClick={() => setCurrentConversation(id)}
+    >
+      Option
+    </ConversationOptionWrapper>
   )
 }
 
-export default ConversationOption
+export default withResource('conversations', ConversationOption, {
+  setCurrentConversation
+})

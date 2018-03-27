@@ -22,7 +22,6 @@ export const allIdsLoadKey = (key) => (
     const newState = [
       ...state,
       ...Object.keys(payload[key])
-          .map(id => parseInt(id))
     ]
 
     // remove duplicates

@@ -1,7 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { database } from 'app/firebase'
-
 import { FlexDaddy, FlexBoy } from 'shared/styled'
+import Message from './Message'
+import { loadMessages } from './messagesActions'
 
 import {
   ISend,
@@ -17,31 +19,43 @@ import {
   MsgInput
 } from './styled'
 
+import { getMessageIdsForCurrentConversation } from './messagesSelectors'
+
+const mapState = (state) => ({
+  messageIds: getMessageIdsForCurrentConversation(state)
+})
+
+const actions = {
+  loadMessages
+}
+
 class Chat extends React.Component {
   state = {
     open: true,
-    value: '',
-    messages: []
+    value: ''
   }
 
   componentDidMount() {
-    const { messages } = this.state
-    database.ref('/messages').on('value', (snapshot) => {
-      const payload = snapshot.val()
-      if (payload) {
-        this.setState({ messages: [...messages, ...Object.values(payload)] })
-      }
+    const { currentConversation, loadMessages } = this.props
+    database.ref(`/conversations/${currentConversation}/messages`)
+      .limitToLast(10).once('value', (snapshot) => {
+        let messages = snapshot.val()
+        Object.keys(messages).forEach(key => messages[key].id = key)
+        loadMessages(messages)
     })
   }
 
   handleSubmit = (event) => {
+    const { currentConversation } = this.props
+    event.preventDefault()
+
     const message = {
       text: this.state.value,
-      userId: this.props.currentUser
+      userId: this.props.currentUser,
+      conversation: currentConversation
     }
 
-    event.preventDefault()
-    database.ref('/messages').push(message)
+    database.ref(`/conversations/${currentConversation}/messages`).push(message)
     this.setState({ value: '' })
   }
 
@@ -59,7 +73,7 @@ class Chat extends React.Component {
 
   render() {
     const { value, messages, open } = this.state
-    const { currentUser } = this.props
+    const { currentUser, messageIds } = this.props
 
     if (!currentUser) return null
 
@@ -77,10 +91,11 @@ class Chat extends React.Component {
         </Header>
         {open && (
           <MessageWindow>
-            {messages.map(msg => (
-              <MsgWrapper isMine={msg.userId === currentUser.uid}>
-                <div>{msg.text}</div>
-              </MsgWrapper>
+            {messageIds.map(msgId => (
+              <Message
+                id={msgId}
+                currentUser={currentUser}
+              />
             ))}
           </MessageWindow>
         )}
@@ -101,4 +116,4 @@ class Chat extends React.Component {
   }
 }
 
-export default Chat
+export default connect(mapState, actions)(Chat)

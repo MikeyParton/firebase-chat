@@ -2,8 +2,10 @@ import styled from 'styled-components'
 
 export const Content = styled.div`
   width: 100%;
-  height: 100%;
+  flex-grow: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
 `
 
 export const PageWrapper = styled.div`
@@ -25,6 +27,7 @@ export const Nav = styled.div`
 `
 
 export const InnerContent = styled.div`
-  height: 100%;
+  flex-grow: 1;
   margin 8px;
+  display: flex;
 `

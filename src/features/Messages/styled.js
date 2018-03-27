@@ -26,6 +26,7 @@ export const MessageWindow = styled.div`
   overflow-y: scroll;
   padding: 0 8px;
   height: 260px;
+  background-color: white;
 `
 
 export const Footer = styled.div`
@@ -38,14 +39,39 @@ export const Footer = styled.div`
 `
 
 export const MsgWrapper = styled.div`
+  color: white;
   display: flex;
-  justify-content: ${({isMine}) => isMine ? 'flex-end' : 'flex-start'};
+  align-items: center;
+  padding: 0 20px;
+  height: 30px;
+  border-radius: 15px;
+  max-width: 230px;
+
+
+  ${({isMine, theme}) => (
+    isMine ? `
+      justify-self: flex-end;
+      background-color: ${theme.colors.mine};
+      `
+    : `justify-self: flex-start;
+      background-color: ${theme.colors.yours};`
+  )}
+`
+
+export const OuterMsgWrapper = styled.div`
+  margin-bottom: 20px;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+
 `
 
 export const MsgInput = styled.input`
   width: 100%;
   border-style: none;
   font-size: 14px;
+  background-color: white;
 
   &:focus {
     outline:0;

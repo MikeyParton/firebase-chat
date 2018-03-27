@@ -5,17 +5,13 @@ import { BookingOptionWrapper } from './styled'
 import { setCurrentBooking } from './bookingsActions'
 
 const BookingOption = (props) => {
-  const { id, name, conversations, setCurrentBooking } = props
+  const { id, active, name, conversations, setCurrentBooking } = props
   return (
-    <BookingOptionWrapper>
-      <div onClick={() => setCurrentBooking(id)} >
-        Booking) {name}
-      </div>
-      <ul>
-        {conversations.map(id => (
-          <ConversationOption id={id} />
-        ))}
-      </ul>
+    <BookingOptionWrapper
+      active={active}
+      onClick={() => !active && setCurrentBooking(id)}
+    >
+      {name}
     </BookingOptionWrapper>
   )
 }
