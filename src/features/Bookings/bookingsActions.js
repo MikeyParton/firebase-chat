@@ -1,5 +1,5 @@
 import { normalize } from 'normalizr'
-import { BOOKINGS_REQUEST, BOOKINGS_SUCCESS } from './bookingsConstants'
+import { BOOKINGS_REQUEST, BOOKINGS_SUCCESS, SET_CURRENT_BOOKING } from './bookingsConstants'
 import { bookingsUrl } from 'app/api'
 import { responseSchema } from './bookingsSchema'
 
@@ -14,6 +14,13 @@ export const requestBookings = (userId) => (
       })
   }
 )
+
+export const setCurrentBooking = (id) => ({
+  type: SET_CURRENT_BOOKING,
+  payload: {
+    id
+  }
+})
 
 const bookingsRequest = () => ({
   type: BOOKINGS_REQUEST

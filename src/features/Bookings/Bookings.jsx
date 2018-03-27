@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { requestBookings } from './bookingsActions'
 import { getBookingIds } from './bookingsSelectors'
 import BookingOption from './BookingOption'
+import { BookingsWrapper } from './styled'
 
 const mapState = state => ({
   bookingIds:  getBookingIds(state),
@@ -22,10 +23,10 @@ class Bookings extends React.Component {
   render() {
     const { bookingIds } = this.props
     return (
-      <div>
-        <div>Bookings</div>
+      <BookingsWrapper>
+        <h3>Bookings</h3>
         { bookingIds.map(id => <BookingOption id={id} />) }
-      </div>
+      </BookingsWrapper>
     )
   }
 }

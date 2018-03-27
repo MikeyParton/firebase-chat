@@ -5,10 +5,10 @@ export const Paddington = styled.div`
   margin-right: ${({mr, mx, m}) => mr || mx || m || 0}px;
   margin-bottom: ${({mb, my, m}) => mb || my || m || 0}px;
   margin-left: ${({ml, mx, m}) => ml || mx || m || 0}px;
-  padding-top: ${({pt, py}) => pt || py || 0}px;
-  padding-right: ${({pr, px}) => pr || px || 0}px;
-  padding-bottom: ${({pb, py}) => pb || py || 0}px;
-  padding-left: ${({pl, px}) => pl || px || 0}px;
+  padding-top: ${({pt, py, p}) => pt || py || p || 0}px;
+  padding-right: ${({pr, px, p}) => pr || px || p|| 0}px;
+  padding-bottom: ${({pb, py, p}) => pb || py || p|| 0}px;
+  padding-left: ${({pl, px, p}) => pl || px || p|| 0}px;
 `
 
 export const FlexDaddy = styled.div`

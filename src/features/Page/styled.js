@@ -23,3 +23,8 @@ export const Nav = styled.div`
   padding-right: 15px;
   justify-content: center;
 `
+
+export const InnerContent = styled.div`
+  height: 100%;
+  margin 8px;
+`

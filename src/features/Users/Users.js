@@ -20,6 +20,7 @@ class Users extends React.Component {
     const { users } = this.props
     return (
       <Paddington px={8} py={8}>
+        <h3>Users</h3>
         <FlexDaddy>
           {users.map(user => (
             <User {...user }/>
