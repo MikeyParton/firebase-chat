@@ -40,6 +40,7 @@ class Chat extends React.Component {
     database.ref(`/conversations/${currentConversation}/messages`)
       .limitToLast(10).once('value', (snapshot) => {
         let messages = snapshot.val()
+        if (!messages) return
         Object.keys(messages).forEach(key => messages[key].id = key)
         loadMessages(messages)
     })
@@ -73,7 +74,7 @@ class Chat extends React.Component {
 
   render() {
     const { value, messages, open } = this.state
-    const { currentUser, messageIds } = this.props
+    const { currentUser, messageIds = [] } = this.props
 
     if (!currentUser) return null
 
