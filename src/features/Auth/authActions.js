@@ -5,11 +5,14 @@ import {
   LOGGED_OUT
 } from './authConstants'
 
+import requestPushPermission from 'app/requestPushPermission'
+
 export const login = (token) => (
   (dispatch) => {
     dispatch(authLoading())
     auth.signInWithCustomToken(token)
       .then((currentUser) => {
+        requestPushPermission(currentUser)
         dispatch(loggedIn(currentUser))
       })
   }

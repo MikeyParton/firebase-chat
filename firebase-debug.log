@@ -1,0 +1,1663 @@
+[debug] [2018-04-04T04:40:01.655Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T04:40:01.664Z] Command:       /Users/michael/.nvm/versions/node/v6.9.0/bin/node /Users/michael/.nvm/versions/node/v6.9.0/bin/firebase deploy --only functions --debug
+[debug] [2018-04-04T04:40:01.665Z] CLI Version:   3.18.0
+[debug] [2018-04-04T04:40:01.666Z] Platform:      darwin
+[debug] [2018-04-04T04:40:01.666Z] Node Version:  v6.9.0
+[debug] [2018-04-04T04:40:01.667Z] Time:          Wed Apr 04 2018 14:40:01 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:01.667Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T04:40:01.686Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T04:40:01.687Z] > authorizing via signed-in user
+[debug] [2018-04-04T04:40:01.690Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-04T04:40:01.690Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/u5mJMkBciWC_2ufNCb2AJf3bugaAGXVwZS_SG4jsj0o',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Apr 04 2018 14:40:01 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:02.202Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:02.206Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 14:40:02 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:03.420Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:03.422Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/toy-chat/tokens  
+  
+ Wed Apr 04 2018 14:40:03 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:04.188Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'toy-chat'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-04T04:40:05.475Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T04:40:05.477Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 14:40:05 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:05.478Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 14:40:05 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:07.312Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:07.318Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-04T04:40:07.319Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 14:40:07 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:08.947Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:08.948Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/171073444580:getServerAppConfig  
+  
+ Wed Apr 04 2018 14:40:08 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:09.971Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T04:40:09.974Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/toy-chat/configs  
+  
+ Wed Apr 04 2018 14:40:09 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:10.790Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.4 KB) for uploading
+[debug] [2018-04-04T04:40:11.290Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions:generateUploadUrl  
+  
+ Wed Apr 04 2018 14:40:11 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:12.225Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:12.226Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/70d1c6d4-bc9a-46d9-9def-c15b4a38aee7.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522818611&Signature=NSdZ48ic4peYO%2F7uvjGwNn46pkkJsqWBNWQqKSyDlmQ%2BSOT64t0MIKhkY5joAL2D6RBF7kEHgcrfafR56agfOlayZdRgPLf3bpkSYEXh%2FdLD68cTOax8wxhfylWSU%2BuOfD92CpqLeZp0QDh7tk2RbUbJ8QdDteWeeA5%2BKHdlW76Ke%2FgedPRxqwf1V4dyg6vFaIeK6D5ZhvalRtfAdtra%2BISCCR8YjAmaACewW6xdoo8az1B7NUtFOcT1UX3p0UISRCvsH7x90KCH6%2BGewpZFRZj6tyyhS%2FDI04kY3tpGvF0SkF2arWk1xuzYChSdknin2P4aRI7GVAb%2FLQee8eRf6w%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1436,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/n2/bt4pmfkd4b1fdc8g4rb10zw80000gp/T/firebase-functions-44052AIPym0wr6b2.zip',
+  fd: 20,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1436 } 
+ Wed Apr 04 2018 14:40:12 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:13.352Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-04-04T04:40:13.354Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions  
+  
+ Wed Apr 04 2018 14:40:13 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:13.760Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function newMessageAlert...
+[debug] [2018-04-04T04:40:13.766Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}","eventType":"providers/google.firebase.database/eventTypes/ref.write","service":"firebaseio.com"}}
+[debug] [2018-04-04T04:40:13.767Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions/newMessageAlert 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/70d1c6d4-bc9a-46d9-9def-c15b4a38aee7.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522818611&Signature=NSdZ48ic4peYO%2F7uvjGwNn46pkkJsqWBNWQqKSyDlmQ%2BSOT64t0MIKhkY5joAL2D6RBF7kEHgcrfafR56agfOlayZdRgPLf3bpkSYEXh%2FdLD68cTOax8wxhfylWSU%2BuOfD92CpqLeZp0QDh7tk2RbUbJ8QdDteWeeA5%2BKHdlW76Ke%2FgedPRxqwf1V4dyg6vFaIeK6D5ZhvalRtfAdtra%2BISCCR8YjAmaACewW6xdoo8az1B7NUtFOcT1UX3p0UISRCvsH7x90KCH6%2BGewpZFRZj6tyyhS%2FDI04kY3tpGvF0SkF2arWk1xuzYChSdknin2P4aRI7GVAb%2FLQee8eRf6w%3D%3D',
+  name: 'projects/toy-chat/locations/us-central1/functions/newMessageAlert',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write',
+     service: 'firebaseio.com' } } 
+ Wed Apr 04 2018 14:40:13 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:14.272Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:14.276Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3U4MmFmX1ViZXlB  
+  
+ Wed Apr 04 2018 14:40:14 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:14.682Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:16.687Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3U4MmFmX1ViZXlB  
+  
+ Wed Apr 04 2018 14:40:16 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:17.140Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:19.142Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3U4MmFmX1ViZXlB  
+  
+ Wed Apr 04 2018 14:40:19 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:19.598Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:21.605Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3U4MmFmX1ViZXlB  
+  
+ Wed Apr 04 2018 14:40:21 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:22.054Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:24.058Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3U4MmFmX1ViZXlB  
+  
+ Wed Apr 04 2018 14:40:24 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:24.512Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:26.518Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3U4MmFmX1ViZXlB  
+  
+ Wed Apr 04 2018 14:40:26 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:26.971Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:28.972Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3U4MmFmX1ViZXlB  
+  
+ Wed Apr 04 2018 14:40:28 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:29.466Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:31.474Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3U4MmFmX1ViZXlB  
+  
+ Wed Apr 04 2018 14:40:31 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:31.886Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:40:33.888Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3U4MmFmX1ViZXlB  
+  
+ Wed Apr 04 2018 14:40:33 GMT+1000 (AEST)
+[debug] [2018-04-04T04:40:34.344Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[newMessageAlert]: Successful update operation. 
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/toy-chat/overview
+[debug] [2018-04-04T04:50:56.011Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T04:50:56.015Z] Command:       /Users/michael/.nvm/versions/node/v6.9.0/bin/node /Users/michael/.nvm/versions/node/v6.9.0/bin/firebase deploy --only functions --debug
+[debug] [2018-04-04T04:50:56.016Z] CLI Version:   3.18.0
+[debug] [2018-04-04T04:50:56.016Z] Platform:      darwin
+[debug] [2018-04-04T04:50:56.017Z] Node Version:  v6.9.0
+[debug] [2018-04-04T04:50:56.017Z] Time:          Wed Apr 04 2018 14:50:56 GMT+1000 (AEST)
+[debug] [2018-04-04T04:50:56.017Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T04:50:56.033Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T04:50:56.034Z] > authorizing via signed-in user
+[debug] [2018-04-04T04:50:56.036Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 14:50:56 GMT+1000 (AEST)
+[debug] [2018-04-04T04:50:57.163Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:50:57.164Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/toy-chat/tokens  
+  
+ Wed Apr 04 2018 14:50:57 GMT+1000 (AEST)
+[debug] [2018-04-04T04:50:58.080Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'toy-chat'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-04T04:50:59.315Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T04:50:59.317Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 14:50:59 GMT+1000 (AEST)
+[debug] [2018-04-04T04:50:59.318Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 14:50:59 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:01.051Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:01.071Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-04T04:51:01.073Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 14:51:01 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:02.434Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:02.435Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/171073444580:getServerAppConfig  
+  
+ Wed Apr 04 2018 14:51:02 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:03.710Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T04:51:03.712Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/toy-chat/configs  
+  
+ Wed Apr 04 2018 14:51:03 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:04.325Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.37 KB) for uploading
+[debug] [2018-04-04T04:51:04.724Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions:generateUploadUrl  
+  
+ Wed Apr 04 2018 14:51:04 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:05.349Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:05.350Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/89290f45-6da9-4d20-880f-6a7a0dc82e62.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522819265&Signature=0fTlUurFE4GBYWWTlsHci2ylulLOhL1wqtJbuUPkFIKP1eX9NtAfCI0aYdfDl2OW3CL%2Bj6zlftw29bbX6yVCI3lmqpMEfDsmDOUCHeRLTS%2B%2FifZjEWHfBU6gaLhAu3AUH%2ByBjHzQx%2BkdJg4rJTYWpQK%2FU2Zyg6FH7BgfKj2CLj%2BjLGi6wW%2FCBYmWfbO4AhaPt5JQoEExapCHvaBWJfpBC41udzb6wyuDY6Jps4zAbt2HUSj3TOph6XyJ0Ah3WaBemj9EvHR9qmpzl%2F8Mq7lYV8%2FLUTTTRJETwluwHxESeo9khUSh1IjwulQ53iP8NwTI0EsfdtLVx2HEZ2zFgl4j5Q%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1398,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/n2/bt4pmfkd4b1fdc8g4rb10zw80000gp/T/firebase-functions-4828swi4GSl7iQDJ.zip',
+  fd: 20,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1398 } 
+ Wed Apr 04 2018 14:51:05 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:06.373Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-04-04T04:51:06.375Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions  
+  
+ Wed Apr 04 2018 14:51:06 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:06.783Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function newMessageAlert...
+[debug] [2018-04-04T04:51:06.789Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}","eventType":"providers/google.firebase.database/eventTypes/ref.write","service":"firebaseio.com"}}
+[debug] [2018-04-04T04:51:06.792Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions/newMessageAlert 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/89290f45-6da9-4d20-880f-6a7a0dc82e62.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522819265&Signature=0fTlUurFE4GBYWWTlsHci2ylulLOhL1wqtJbuUPkFIKP1eX9NtAfCI0aYdfDl2OW3CL%2Bj6zlftw29bbX6yVCI3lmqpMEfDsmDOUCHeRLTS%2B%2FifZjEWHfBU6gaLhAu3AUH%2ByBjHzQx%2BkdJg4rJTYWpQK%2FU2Zyg6FH7BgfKj2CLj%2BjLGi6wW%2FCBYmWfbO4AhaPt5JQoEExapCHvaBWJfpBC41udzb6wyuDY6Jps4zAbt2HUSj3TOph6XyJ0Ah3WaBemj9EvHR9qmpzl%2F8Mq7lYV8%2FLUTTTRJETwluwHxESeo9khUSh1IjwulQ53iP8NwTI0EsfdtLVx2HEZ2zFgl4j5Q%3D%3D',
+  name: 'projects/toy-chat/locations/us-central1/functions/newMessageAlert',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write',
+     service: 'firebaseio.com' } } 
+ Wed Apr 04 2018 14:51:06 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:07.209Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:07.212Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2tELV92WnpxeG80  
+  
+ Wed Apr 04 2018 14:51:07 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:07.603Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:09.607Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2tELV92WnpxeG80  
+  
+ Wed Apr 04 2018 14:51:09 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:10.061Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:12.062Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2tELV92WnpxeG80  
+  
+ Wed Apr 04 2018 14:51:12 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:12.445Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:14.451Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2tELV92WnpxeG80  
+  
+ Wed Apr 04 2018 14:51:14 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:14.812Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:16.814Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2tELV92WnpxeG80  
+  
+ Wed Apr 04 2018 14:51:16 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:17.265Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:19.280Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2tELV92WnpxeG80  
+  
+ Wed Apr 04 2018 14:51:19 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:19.686Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:21.688Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2tELV92WnpxeG80  
+  
+ Wed Apr 04 2018 14:51:21 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:22.143Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:24.145Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2tELV92WnpxeG80  
+  
+ Wed Apr 04 2018 14:51:24 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:24.601Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:26.607Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2tELV92WnpxeG80  
+  
+ Wed Apr 04 2018 14:51:26 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:26.998Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:51:29.000Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2tELV92WnpxeG80  
+  
+ Wed Apr 04 2018 14:51:29 GMT+1000 (AEST)
+[debug] [2018-04-04T04:51:29.373Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[newMessageAlert]: Successful update operation. 
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/toy-chat/overview
+[debug] [2018-04-04T04:57:08.825Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T04:57:08.829Z] Command:       /Users/michael/.nvm/versions/node/v6.9.0/bin/node /Users/michael/.nvm/versions/node/v6.9.0/bin/firebase deploy --only functions --debug
+[debug] [2018-04-04T04:57:08.831Z] CLI Version:   3.18.0
+[debug] [2018-04-04T04:57:08.831Z] Platform:      darwin
+[debug] [2018-04-04T04:57:08.831Z] Node Version:  v6.9.0
+[debug] [2018-04-04T04:57:08.832Z] Time:          Wed Apr 04 2018 14:57:08 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:08.832Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T04:57:08.850Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T04:57:08.851Z] > authorizing via signed-in user
+[debug] [2018-04-04T04:57:08.855Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 14:57:08 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:11.036Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:11.038Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/toy-chat/tokens  
+  
+ Wed Apr 04 2018 14:57:11 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:11.958Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'toy-chat'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-04T04:57:13.273Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T04:57:13.274Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 14:57:13 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:13.275Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 14:57:13 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:15.126Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:15.132Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-04T04:57:15.135Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 14:57:15 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:16.457Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:16.458Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/171073444580:getServerAppConfig  
+  
+ Wed Apr 04 2018 14:57:16 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:17.271Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T04:57:17.274Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/toy-chat/configs  
+  
+ Wed Apr 04 2018 14:57:17 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:17.890Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.38 KB) for uploading
+[debug] [2018-04-04T04:57:18.374Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions:generateUploadUrl  
+  
+ Wed Apr 04 2018 14:57:18 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:19.018Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:19.019Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/7dacdc3f-b332-46af-aad9-0940955888ec.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522819638&Signature=gFxyo4ddw83Iwa%2Fb7HcpfBcQxQ2yvfBV9Du9eAszQNDRh47d0C7%2FG5zTffzhThf3NSE6PL16QPDwcqeX0wXosdx3Znolc1TVo0b0eEHcOw%2BuG6eMONbDtW2VJ41zjjH5xgRzEp2nCuZI6XIOwJ4QbNndXspLwDMepyzHnKGY775ohz%2BrT4Ik0WHKYWyZClbC0u7nE21b33xsT4xkJsi9%2B9fpl%2FGH3X4X6ycZu3P4neQFzoNtWNuhsqMGrMu%2F%2BHFo73F%2Fp4BEuFh3gL0rQdKqXyrl6TMMLmBx0DzjDaR2N0m8tW%2Fpr%2Bp6NJCb%2FWOvFjS1n3%2FHFJc9lnEvNOGQKHevFA%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1408,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/n2/bt4pmfkd4b1fdc8g4rb10zw80000gp/T/firebase-functions-4989ivVtOXOFh5KY.zip',
+  fd: 20,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1408 } 
+ Wed Apr 04 2018 14:57:19 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:19.938Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-04-04T04:57:19.941Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions  
+  
+ Wed Apr 04 2018 14:57:19 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:20.326Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function newMessageAlert...
+[debug] [2018-04-04T04:57:20.331Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}","eventType":"providers/google.firebase.database/eventTypes/ref.write","service":"firebaseio.com"}}
+[debug] [2018-04-04T04:57:20.333Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions/newMessageAlert 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/7dacdc3f-b332-46af-aad9-0940955888ec.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522819638&Signature=gFxyo4ddw83Iwa%2Fb7HcpfBcQxQ2yvfBV9Du9eAszQNDRh47d0C7%2FG5zTffzhThf3NSE6PL16QPDwcqeX0wXosdx3Znolc1TVo0b0eEHcOw%2BuG6eMONbDtW2VJ41zjjH5xgRzEp2nCuZI6XIOwJ4QbNndXspLwDMepyzHnKGY775ohz%2BrT4Ik0WHKYWyZClbC0u7nE21b33xsT4xkJsi9%2B9fpl%2FGH3X4X6ycZu3P4neQFzoNtWNuhsqMGrMu%2F%2BHFo73F%2Fp4BEuFh3gL0rQdKqXyrl6TMMLmBx0DzjDaR2N0m8tW%2Fpr%2Bp6NJCb%2FWOvFjS1n3%2FHFJc9lnEvNOGQKHevFA%3D%3D',
+  name: 'projects/toy-chat/locations/us-central1/functions/newMessageAlert',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write',
+     service: 'firebaseio.com' } } 
+ Wed Apr 04 2018 14:57:20 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:20.860Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:20.863Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1F0ckdSdDZmUVhj  
+  
+ Wed Apr 04 2018 14:57:20 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:21.245Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:23.248Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1F0ckdSdDZmUVhj  
+  
+ Wed Apr 04 2018 14:57:23 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:23.626Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:25.627Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1F0ckdSdDZmUVhj  
+  
+ Wed Apr 04 2018 14:57:25 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:26.082Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:28.090Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1F0ckdSdDZmUVhj  
+  
+ Wed Apr 04 2018 14:57:28 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:28.540Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:30.545Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1F0ckdSdDZmUVhj  
+  
+ Wed Apr 04 2018 14:57:30 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:30.953Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:32.965Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1F0ckdSdDZmUVhj  
+  
+ Wed Apr 04 2018 14:57:32 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:33.332Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:35.338Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1F0ckdSdDZmUVhj  
+  
+ Wed Apr 04 2018 14:57:35 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:35.702Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:37.709Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1F0ckdSdDZmUVhj  
+  
+ Wed Apr 04 2018 14:57:37 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:38.151Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T04:57:40.153Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1F0ckdSdDZmUVhj  
+  
+ Wed Apr 04 2018 14:57:40 GMT+1000 (AEST)
+[debug] [2018-04-04T04:57:40.625Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[newMessageAlert]: Successful update operation. 
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/toy-chat/overview
+[debug] [2018-04-04T05:04:03.438Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T05:04:03.442Z] Command:       /Users/michael/.nvm/versions/node/v6.9.0/bin/node /Users/michael/.nvm/versions/node/v6.9.0/bin/firebase deploy --only functions --debug
+[debug] [2018-04-04T05:04:03.443Z] CLI Version:   3.18.0
+[debug] [2018-04-04T05:04:03.443Z] Platform:      darwin
+[debug] [2018-04-04T05:04:03.443Z] Node Version:  v6.9.0
+[debug] [2018-04-04T05:04:03.444Z] Time:          Wed Apr 04 2018 15:04:03 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:03.444Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T05:04:03.458Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T05:04:03.458Z] > authorizing via signed-in user
+[debug] [2018-04-04T05:04:03.461Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 15:04:03 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:04.576Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:04.577Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/toy-chat/tokens  
+  
+ Wed Apr 04 2018 15:04:04 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:05.470Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'toy-chat'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-04T05:04:06.574Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T05:04:06.575Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 15:04:06 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:06.576Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 15:04:06 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:08.223Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:08.228Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-04T05:04:08.230Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 15:04:08 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:09.568Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:09.569Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/171073444580:getServerAppConfig  
+  
+ Wed Apr 04 2018 15:04:09 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:10.575Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T05:04:10.577Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/toy-chat/configs  
+  
+ Wed Apr 04 2018 15:04:10 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:11.154Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.39 KB) for uploading
+[debug] [2018-04-04T05:04:11.464Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions:generateUploadUrl  
+  
+ Wed Apr 04 2018 15:04:11 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:12.008Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:12.009Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/a8ea6526-0b72-4628-9579-2685313f3719.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522820051&Signature=OVpHVhoB5xPsCX1RpoMhy16Ckt0rUzk3C4OXG5XNz5dPaAIlmfBYvpQBFVq2NWJsSxhaiy1ipybuQRw6zhFpS8TMvzKQEMy1xxk27E2xbS2QUKIMoZkbI71vgMpYYCTlMqw8WGGwxTC29iIPwUnysdvWtkmMeYCATpL2axT08u6AkiZsBkSynYBeZcobk8my0RJEzlbOmz72jBcxVlLgtmrAzxK%2BBjcruo9C%2BVUXqe2z4tduKj76jRt%2BT4UbWgX9VkQYMKrafffB3U2iUESvXjV2ioGVZma800u%2FUp8yV%2Fgr1fEK4SDr2jqjxgKnbXUESStm8ZaMLa7dFuWrpbeBBw%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1424,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/n2/bt4pmfkd4b1fdc8g4rb10zw80000gp/T/firebase-functions-5150Cop0aX4fng3c.zip',
+  fd: 20,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1424 } 
+ Wed Apr 04 2018 15:04:12 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:13.237Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-04-04T05:04:13.240Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions  
+  
+ Wed Apr 04 2018 15:04:13 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:13.617Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function newMessageAlert...
+[debug] [2018-04-04T05:04:13.622Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}","eventType":"providers/google.firebase.database/eventTypes/ref.write","service":"firebaseio.com"}}
+[debug] [2018-04-04T05:04:13.624Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions/newMessageAlert 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/a8ea6526-0b72-4628-9579-2685313f3719.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522820051&Signature=OVpHVhoB5xPsCX1RpoMhy16Ckt0rUzk3C4OXG5XNz5dPaAIlmfBYvpQBFVq2NWJsSxhaiy1ipybuQRw6zhFpS8TMvzKQEMy1xxk27E2xbS2QUKIMoZkbI71vgMpYYCTlMqw8WGGwxTC29iIPwUnysdvWtkmMeYCATpL2axT08u6AkiZsBkSynYBeZcobk8my0RJEzlbOmz72jBcxVlLgtmrAzxK%2BBjcruo9C%2BVUXqe2z4tduKj76jRt%2BT4UbWgX9VkQYMKrafffB3U2iUESvXjV2ioGVZma800u%2FUp8yV%2Fgr1fEK4SDr2jqjxgKnbXUESStm8ZaMLa7dFuWrpbeBBw%3D%3D',
+  name: 'projects/toy-chat/locations/us-central1/functions/newMessageAlert',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write',
+     service: 'firebaseio.com' } } 
+ Wed Apr 04 2018 15:04:13 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:14.159Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:14.163Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2I2a1FoVk5qaE9v  
+  
+ Wed Apr 04 2018 15:04:14 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:14.569Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:16.577Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2I2a1FoVk5qaE9v  
+  
+ Wed Apr 04 2018 15:04:16 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:16.934Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:18.939Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2I2a1FoVk5qaE9v  
+  
+ Wed Apr 04 2018 15:04:18 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:19.381Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:21.383Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2I2a1FoVk5qaE9v  
+  
+ Wed Apr 04 2018 15:04:21 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:21.840Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:23.842Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2I2a1FoVk5qaE9v  
+  
+ Wed Apr 04 2018 15:04:23 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:24.302Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:26.307Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2I2a1FoVk5qaE9v  
+  
+ Wed Apr 04 2018 15:04:26 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:26.700Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:28.716Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2I2a1FoVk5qaE9v  
+  
+ Wed Apr 04 2018 15:04:28 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:29.110Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:04:31.116Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2I2a1FoVk5qaE9v  
+  
+ Wed Apr 04 2018 15:04:31 GMT+1000 (AEST)
+[debug] [2018-04-04T05:04:31.570Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[newMessageAlert]: Successful update operation. 
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/toy-chat/overview
+[debug] [2018-04-04T05:09:02.183Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T05:09:02.187Z] Command:       /Users/michael/.nvm/versions/node/v6.9.0/bin/node /Users/michael/.nvm/versions/node/v6.9.0/bin/firebase deploy --only functions --debug
+[debug] [2018-04-04T05:09:02.188Z] CLI Version:   3.18.0
+[debug] [2018-04-04T05:09:02.188Z] Platform:      darwin
+[debug] [2018-04-04T05:09:02.188Z] Node Version:  v6.9.0
+[debug] [2018-04-04T05:09:02.189Z] Time:          Wed Apr 04 2018 15:09:02 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:02.189Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T05:09:02.203Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T05:09:02.203Z] > authorizing via signed-in user
+[debug] [2018-04-04T05:09:02.205Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 15:09:02 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:03.353Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:03.354Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/toy-chat/tokens  
+  
+ Wed Apr 04 2018 15:09:03 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:04.171Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'toy-chat'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-04T05:09:05.402Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T05:09:05.403Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 15:09:05 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:05.404Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 15:09:05 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:07.241Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:07.250Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-04T05:09:07.252Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 15:09:07 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:08.569Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:08.570Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/171073444580:getServerAppConfig  
+  
+ Wed Apr 04 2018 15:09:08 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:09.491Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T05:09:09.493Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/toy-chat/configs  
+  
+ Wed Apr 04 2018 15:09:09 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:10.015Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.46 KB) for uploading
+[debug] [2018-04-04T05:09:10.314Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions:generateUploadUrl  
+  
+ Wed Apr 04 2018 15:09:10 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:10.924Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:10.926Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/498afae7-c261-4214-96c6-a9d282ca5607.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522820350&Signature=l7mQBACUK7XM%2F1R4kuS4MSj132g5XeFMlBt0L3X9hU2oymTmbO6a%2BZt0BbaNT0Zh7nAsYDi3O8rNFLZV4zrP800pV%2FTeQyHleyudjmiD3dk5RWIqeJgkMOkSVrWbx6VdS5%2BHNuZJAIPqZhjb1Xblztxr1OiSoBQcKQ7%2BwySpNGFbBa7oVf6NYeELHRzA7MDshwwOImVlIl7mTHlD5FnZIxb4U57vxBZ8ZaR6bWbW3vFGDxxHkpxxrxaqvOeB%2FJyG8Ddrcki0eGGVI9UmeHs3hHgwVAgl3VHRn7zuZsn54gfeJonF0HZVWbQMM%2B%2BCoisrMBp9zRBlNZOqj5JQpKYSaA%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1498,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/n2/bt4pmfkd4b1fdc8g4rb10zw80000gp/T/firebase-functions-5288ZG81Sa0bu74d.zip',
+  fd: 20,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1498 } 
+ Wed Apr 04 2018 15:09:10 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:11.965Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-04-04T05:09:11.967Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions  
+  
+ Wed Apr 04 2018 15:09:11 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:12.462Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function newMessageAlert...
+[debug] [2018-04-04T05:09:12.467Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}","eventType":"providers/google.firebase.database/eventTypes/ref.write","service":"firebaseio.com"}}
+[debug] [2018-04-04T05:09:12.469Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions/newMessageAlert 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/498afae7-c261-4214-96c6-a9d282ca5607.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522820350&Signature=l7mQBACUK7XM%2F1R4kuS4MSj132g5XeFMlBt0L3X9hU2oymTmbO6a%2BZt0BbaNT0Zh7nAsYDi3O8rNFLZV4zrP800pV%2FTeQyHleyudjmiD3dk5RWIqeJgkMOkSVrWbx6VdS5%2BHNuZJAIPqZhjb1Xblztxr1OiSoBQcKQ7%2BwySpNGFbBa7oVf6NYeELHRzA7MDshwwOImVlIl7mTHlD5FnZIxb4U57vxBZ8ZaR6bWbW3vFGDxxHkpxxrxaqvOeB%2FJyG8Ddrcki0eGGVI9UmeHs3hHgwVAgl3VHRn7zuZsn54gfeJonF0HZVWbQMM%2B%2BCoisrMBp9zRBlNZOqj5JQpKYSaA%3D%3D',
+  name: 'projects/toy-chat/locations/us-central1/functions/newMessageAlert',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write',
+     service: 'firebaseio.com' } } 
+ Wed Apr 04 2018 15:09:12 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:12.973Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:12.977Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0LzlkaVkyekNBbTdF  
+  
+ Wed Apr 04 2018 15:09:12 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:13.383Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:15.388Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0LzlkaVkyekNBbTdF  
+  
+ Wed Apr 04 2018 15:09:15 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:15.841Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:17.845Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0LzlkaVkyekNBbTdF  
+  
+ Wed Apr 04 2018 15:09:17 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:18.300Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:20.303Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0LzlkaVkyekNBbTdF  
+  
+ Wed Apr 04 2018 15:09:20 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:20.678Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:22.682Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0LzlkaVkyekNBbTdF  
+  
+ Wed Apr 04 2018 15:09:22 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:23.043Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:25.046Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0LzlkaVkyekNBbTdF  
+  
+ Wed Apr 04 2018 15:09:25 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:25.453Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:27.470Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0LzlkaVkyekNBbTdF  
+  
+ Wed Apr 04 2018 15:09:27 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:27.925Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:29.927Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0LzlkaVkyekNBbTdF  
+  
+ Wed Apr 04 2018 15:09:29 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:30.382Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T05:09:32.389Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0LzlkaVkyekNBbTdF  
+  
+ Wed Apr 04 2018 15:09:32 GMT+1000 (AEST)
+[debug] [2018-04-04T05:09:32.839Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[newMessageAlert]: Successful update operation. 
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/toy-chat/overview
+[debug] [2018-04-04T06:54:29.574Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T06:54:29.578Z] Command:       /Users/michael/.nvm/versions/node/v6.9.0/bin/node /Users/michael/.nvm/versions/node/v6.9.0/bin/firebase deploy --only functions --debug
+[debug] [2018-04-04T06:54:29.579Z] CLI Version:   3.18.0
+[debug] [2018-04-04T06:54:29.579Z] Platform:      darwin
+[debug] [2018-04-04T06:54:29.579Z] Node Version:  v6.9.0
+[debug] [2018-04-04T06:54:29.580Z] Time:          Wed Apr 04 2018 16:54:29 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:29.580Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T06:54:29.597Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T06:54:29.597Z] > authorizing via signed-in user
+[debug] [2018-04-04T06:54:29.600Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-04T06:54:29.601Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/u5mJMkBciWC_2ufNCb2AJf3bugaAGXVwZS_SG4jsj0o',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Apr 04 2018 16:54:29 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:30.220Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:30.223Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 16:54:30 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:31.360Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:31.361Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/toy-chat/tokens  
+  
+ Wed Apr 04 2018 16:54:31 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:32.273Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'toy-chat'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-04T06:54:33.497Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T06:54:33.498Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 16:54:33 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:33.499Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 16:54:33 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:35.232Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:35.235Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-04T06:54:35.237Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 16:54:35 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:36.722Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:36.722Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/171073444580:getServerAppConfig  
+  
+ Wed Apr 04 2018 16:54:36 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:37.700Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T06:54:37.703Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/toy-chat/configs  
+  
+ Wed Apr 04 2018 16:54:37 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:38.385Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.46 KB) for uploading
+[debug] [2018-04-04T06:54:38.875Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions:generateUploadUrl  
+  
+ Wed Apr 04 2018 16:54:38 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:39.634Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:39.635Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/50aca0b5-4f20-43f6-8736-a990c36250f4.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522826679&Signature=OCaGrJqZw3ayjnOCXpWGLCm4d2m%2BXarX6MshhKLTq4PGy%2FjyzX7SXAuPWz36lXxPJ3G78dxU8cWbN2g3PugYX0MxmxyK90BLkoLrKgFLuuzsJvcQTlCCI1w9gLOvfaTOh1LVlrQIWWAnX7oBMHQyRsMiokAOC8gD6Y%2F0Lgj0LnyxSq3m6g1iVuD5eFzV%2Fi14%2Fx79E04JFbbbda6%2BnYvpSgUeIn1PE2EbWWA6SDVx9FXrq2Y%2F7LAhTrI8js3TL%2B48q2wXHPDk7VomDjntq59JY55vgo4Q7%2BbNx%2FUlFJMCOSbqOkL51e4xwRZ%2FwDtlBfU%2B8Yby3namoQSymCjT2EfnVg%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1497,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/n2/bt4pmfkd4b1fdc8g4rb10zw80000gp/T/firebase-functions-150351wIqIaRq1nj0.zip',
+  fd: 20,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1497 } 
+ Wed Apr 04 2018 16:54:39 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:40.710Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-04-04T06:54:40.712Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions  
+  
+ Wed Apr 04 2018 16:54:40 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:41.101Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function newMessageAlert...
+[debug] [2018-04-04T06:54:41.106Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}","eventType":"providers/google.firebase.database/eventTypes/ref.write","service":"firebaseio.com"}}
+[debug] [2018-04-04T06:54:41.108Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions/newMessageAlert 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/50aca0b5-4f20-43f6-8736-a990c36250f4.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522826679&Signature=OCaGrJqZw3ayjnOCXpWGLCm4d2m%2BXarX6MshhKLTq4PGy%2FjyzX7SXAuPWz36lXxPJ3G78dxU8cWbN2g3PugYX0MxmxyK90BLkoLrKgFLuuzsJvcQTlCCI1w9gLOvfaTOh1LVlrQIWWAnX7oBMHQyRsMiokAOC8gD6Y%2F0Lgj0LnyxSq3m6g1iVuD5eFzV%2Fi14%2Fx79E04JFbbbda6%2BnYvpSgUeIn1PE2EbWWA6SDVx9FXrq2Y%2F7LAhTrI8js3TL%2B48q2wXHPDk7VomDjntq59JY55vgo4Q7%2BbNx%2FUlFJMCOSbqOkL51e4xwRZ%2FwDtlBfU%2B8Yby3namoQSymCjT2EfnVg%3D%3D',
+  name: 'projects/toy-chat/locations/us-central1/functions/newMessageAlert',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write',
+     service: 'firebaseio.com' } } 
+ Wed Apr 04 2018 16:54:41 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:41.582Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:41.585Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2RULUtFV0pGdjE0  
+  
+ Wed Apr 04 2018 16:54:41 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:41.991Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:43.998Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2RULUtFV0pGdjE0  
+  
+ Wed Apr 04 2018 16:54:43 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:44.366Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:46.370Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2RULUtFV0pGdjE0  
+  
+ Wed Apr 04 2018 16:54:46 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:46.733Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:48.736Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2RULUtFV0pGdjE0  
+  
+ Wed Apr 04 2018 16:54:48 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:49.101Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:51.106Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2RULUtFV0pGdjE0  
+  
+ Wed Apr 04 2018 16:54:51 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:51.483Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:53.499Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2RULUtFV0pGdjE0  
+  
+ Wed Apr 04 2018 16:54:53 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:53.868Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T06:54:55.870Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L2RULUtFV0pGdjE0  
+  
+ Wed Apr 04 2018 16:54:55 GMT+1000 (AEST)
+[debug] [2018-04-04T06:54:56.247Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[newMessageAlert]: Successful update operation. 
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/toy-chat/overview
+[debug] [2018-04-04T07:31:16.593Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T07:31:16.599Z] Command:       /Users/michael/.nvm/versions/node/v6.9.0/bin/node /Users/michael/.nvm/versions/node/v6.9.0/bin/firebase deploy --only functions --debug
+[debug] [2018-04-04T07:31:16.600Z] CLI Version:   3.18.0
+[debug] [2018-04-04T07:31:16.601Z] Platform:      darwin
+[debug] [2018-04-04T07:31:16.601Z] Node Version:  v6.9.0
+[debug] [2018-04-04T07:31:16.602Z] Time:          Wed Apr 04 2018 17:31:16 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:16.602Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T07:31:16.623Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T07:31:16.623Z] > authorizing via signed-in user
+[debug] [2018-04-04T07:31:16.626Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 17:31:16 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:17.653Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:17.654Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/toy-chat/tokens  
+  
+ Wed Apr 04 2018 17:31:17 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:18.542Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'toy-chat'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-04T07:31:19.666Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T07:31:19.667Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 17:31:19 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:19.668Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Wed Apr 04 2018 17:31:19 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:21.395Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:21.403Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-04T07:31:21.405Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/toy-chat  
+  
+ Wed Apr 04 2018 17:31:21 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:22.822Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:22.822Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/171073444580:getServerAppConfig  
+  
+ Wed Apr 04 2018 17:31:22 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:23.742Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T07:31:23.743Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/toy-chat/configs  
+  
+ Wed Apr 04 2018 17:31:23 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:24.331Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.46 KB) for uploading
+[debug] [2018-04-04T07:31:24.747Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions:generateUploadUrl  
+  
+ Wed Apr 04 2018 17:31:24 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:25.283Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:25.284Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/54584ee1-329a-4f22-a87c-00fb9575f3a3.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522828885&Signature=l9I2UzXBSl7%2FGqYZimxIo%2Bu9uE3nka7cnZ%2B3Dg0BVkbbjZeL%2BMNOuDJxnSPuTWNbzLMTRDhJ0qrp6hwfR4MP4UFZ%2BFsfpCefCLc4FaOSZGG8kz295EbZwpXHRqRZyy9cqJG%2BfSPH7C%2BiMikYoUvCPg1PnKdCdZ2LmvOB8CT%2BFEgbGfa0w6EYozYaekpG4Un9%2Bd8p7caAP3Ac6qNcvyoVD3bMaa9n0fqar7QwuHrJpxtfFQCDrRBgi1NI%2FcToQRbZefN19lVsHsxFb1Qp2BKftVIFt58hb8SCnPMlTfhm09IMfhEw876r02DsU5p3E0WMCPwYRf%2FCez5Q0ikA8EKjJw%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1497,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/n2/bt4pmfkd4b1fdc8g4rb10zw80000gp/T/firebase-functions-16248LyHwMalmtnR0.zip',
+  fd: 20,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1497 } 
+ Wed Apr 04 2018 17:31:25 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:26.290Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-04-04T07:31:26.293Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions  
+  
+ Wed Apr 04 2018 17:31:26 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:26.692Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function newMessageAlert...
+[debug] [2018-04-04T07:31:26.697Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}","eventType":"providers/google.firebase.database/eventTypes/ref.write","service":"firebaseio.com"}}
+[debug] [2018-04-04T07:31:26.699Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions/newMessageAlert 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/54584ee1-329a-4f22-a87c-00fb9575f3a3.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522828885&Signature=l9I2UzXBSl7%2FGqYZimxIo%2Bu9uE3nka7cnZ%2B3Dg0BVkbbjZeL%2BMNOuDJxnSPuTWNbzLMTRDhJ0qrp6hwfR4MP4UFZ%2BFsfpCefCLc4FaOSZGG8kz295EbZwpXHRqRZyy9cqJG%2BfSPH7C%2BiMikYoUvCPg1PnKdCdZ2LmvOB8CT%2BFEgbGfa0w6EYozYaekpG4Un9%2Bd8p7caAP3Ac6qNcvyoVD3bMaa9n0fqar7QwuHrJpxtfFQCDrRBgi1NI%2FcToQRbZefN19lVsHsxFb1Qp2BKftVIFt58hb8SCnPMlTfhm09IMfhEw876r02DsU5p3E0WMCPwYRf%2FCez5Q0ikA8EKjJw%3D%3D',
+  name: 'projects/toy-chat/locations/us-central1/functions/newMessageAlert',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write',
+     service: 'firebaseio.com' } } 
+ Wed Apr 04 2018 17:31:26 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:27.200Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:27.204Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1dTbDdGb0lkSDIw  
+  
+ Wed Apr 04 2018 17:31:27 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:27.643Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:29.645Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1dTbDdGb0lkSDIw  
+  
+ Wed Apr 04 2018 17:31:29 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:30.103Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:32.108Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1dTbDdGb0lkSDIw  
+  
+ Wed Apr 04 2018 17:31:32 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:32.558Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:34.563Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1dTbDdGb0lkSDIw  
+  
+ Wed Apr 04 2018 17:31:34 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:35.017Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:37.022Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1dTbDdGb0lkSDIw  
+  
+ Wed Apr 04 2018 17:31:37 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:37.393Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:39.399Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1dTbDdGb0lkSDIw  
+  
+ Wed Apr 04 2018 17:31:39 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:39.807Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:41.825Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1dTbDdGb0lkSDIw  
+  
+ Wed Apr 04 2018 17:31:41 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:42.288Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T07:31:44.289Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1dTbDdGb0lkSDIw  
+  
+ Wed Apr 04 2018 17:31:44 GMT+1000 (AEST)
+[debug] [2018-04-04T07:31:44.852Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[newMessageAlert]: Successful update operation. 
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/toy-chat/overview
+[debug] [2018-04-04T22:40:02.386Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T22:40:02.390Z] Command:       /Users/michael/.nvm/versions/node/v6.9.0/bin/node /Users/michael/.nvm/versions/node/v6.9.0/bin/firebase deploy --only functions --debug
+[debug] [2018-04-04T22:40:02.391Z] CLI Version:   3.18.0
+[debug] [2018-04-04T22:40:02.391Z] Platform:      darwin
+[debug] [2018-04-04T22:40:02.392Z] Node Version:  v6.9.0
+[debug] [2018-04-04T22:40:02.392Z] Time:          Thu Apr 05 2018 08:40:02 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:02.393Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T22:40:02.412Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T22:40:02.413Z] > authorizing via signed-in user
+[debug] [2018-04-04T22:40:02.416Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-04T22:40:02.416Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/u5mJMkBciWC_2ufNCb2AJf3bugaAGXVwZS_SG4jsj0o',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Apr 05 2018 08:40:02 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:03.132Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:03.136Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toy-chat  
+  
+ Thu Apr 05 2018 08:40:03 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:04.234Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:04.235Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/toy-chat/tokens  
+  
+ Thu Apr 05 2018 08:40:04 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:05.349Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'toy-chat'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-04T22:40:06.688Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T22:40:06.690Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Thu Apr 05 2018 08:40:06 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:06.690Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Thu Apr 05 2018 08:40:06 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:08.450Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-04T22:40:08.473Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:08.474Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/toy-chat  
+  
+ Thu Apr 05 2018 08:40:08 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:10.083Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:10.084Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/171073444580:getServerAppConfig  
+  
+ Thu Apr 05 2018 08:40:10 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:11.435Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T22:40:11.437Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/toy-chat/configs  
+  
+ Thu Apr 05 2018 08:40:11 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:12.249Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.53 KB) for uploading
+[debug] [2018-04-04T22:40:12.661Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions:generateUploadUrl  
+  
+ Thu Apr 05 2018 08:40:12 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:13.701Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:13.702Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/7a42173a-15f4-486a-afe5-b190b341d28e.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522883413&Signature=NjZXlB6nTAgUPA1v4U4BXVvrf7Vhw0sC%2FyorBJPeRQMjzlEPVoEW2cqVE4wynUPknVGh7tr%2FhxiFbme6DgCYe9%2FvMhSlf4tgJeu0LxzB54qV4GZm6Tr9g4o9z9AkBxom7K%2B5DvU0t%2FhWUvqxpNiZEvExXjQ7CENuZm15D7TtmO78J32%2BWBqrIUTCpqn%2FXnnP1E%2BOQ%2BTVH1%2B%2FP99RSq%2FaMCM5n00xOnC3ikaLNcUgPZpvbMIlakICg0WiLjW%2FkqBSrytwi7U8HxGuKmC4VBGGDHVPN8HpYuWmsGRJjwTJrGBkJk5k2%2FjqcV4crFQ0OlkXamO3qXdSvwgeC1Pr0QabsQ%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1569,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/n2/bt4pmfkd4b1fdc8g4rb10zw80000gp/T/firebase-functions-17206TbOuXq4LHiEP.zip',
+  fd: 20,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1569 } 
+ Thu Apr 05 2018 08:40:13 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:14.822Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-04-04T22:40:14.825Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions  
+  
+ Thu Apr 05 2018 08:40:14 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:15.296Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function newMessageAlert...
+[debug] [2018-04-04T22:40:15.301Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}","eventType":"providers/google.firebase.database/eventTypes/ref.write","service":"firebaseio.com"}}
+[debug] [2018-04-04T22:40:15.303Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions/newMessageAlert 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/7a42173a-15f4-486a-afe5-b190b341d28e.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522883413&Signature=NjZXlB6nTAgUPA1v4U4BXVvrf7Vhw0sC%2FyorBJPeRQMjzlEPVoEW2cqVE4wynUPknVGh7tr%2FhxiFbme6DgCYe9%2FvMhSlf4tgJeu0LxzB54qV4GZm6Tr9g4o9z9AkBxom7K%2B5DvU0t%2FhWUvqxpNiZEvExXjQ7CENuZm15D7TtmO78J32%2BWBqrIUTCpqn%2FXnnP1E%2BOQ%2BTVH1%2B%2FP99RSq%2FaMCM5n00xOnC3ikaLNcUgPZpvbMIlakICg0WiLjW%2FkqBSrytwi7U8HxGuKmC4VBGGDHVPN8HpYuWmsGRJjwTJrGBkJk5k2%2FjqcV4crFQ0OlkXamO3qXdSvwgeC1Pr0QabsQ%3D%3D',
+  name: 'projects/toy-chat/locations/us-central1/functions/newMessageAlert',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write',
+     service: 'firebaseio.com' } } 
+ Thu Apr 05 2018 08:40:15 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:15.956Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:15.960Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3lpeE5MdWNMREtz  
+  
+ Thu Apr 05 2018 08:40:15 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:16.365Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:18.369Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3lpeE5MdWNMREtz  
+  
+ Thu Apr 05 2018 08:40:18 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:18.836Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:20.842Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3lpeE5MdWNMREtz  
+  
+ Thu Apr 05 2018 08:40:20 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:21.225Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:23.230Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3lpeE5MdWNMREtz  
+  
+ Thu Apr 05 2018 08:40:23 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:23.631Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:25.648Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3lpeE5MdWNMREtz  
+  
+ Thu Apr 05 2018 08:40:25 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:26.092Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:28.093Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3lpeE5MdWNMREtz  
+  
+ Thu Apr 05 2018 08:40:28 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:28.549Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:30.555Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3lpeE5MdWNMREtz  
+  
+ Thu Apr 05 2018 08:40:30 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:30.956Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T22:40:32.959Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L3lpeE5MdWNMREtz  
+  
+ Thu Apr 05 2018 08:40:32 GMT+1000 (AEST)
+[debug] [2018-04-04T22:40:33.361Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[newMessageAlert]: Successful update operation. 
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/toy-chat/overview
+[debug] [2018-04-04T23:06:57.130Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T23:06:57.135Z] Command:       /Users/michael/.nvm/versions/node/v6.9.0/bin/node /Users/michael/.nvm/versions/node/v6.9.0/bin/firebase deploy --only functions --debug
+[debug] [2018-04-04T23:06:57.136Z] CLI Version:   3.18.0
+[debug] [2018-04-04T23:06:57.136Z] Platform:      darwin
+[debug] [2018-04-04T23:06:57.136Z] Node Version:  v6.9.0
+[debug] [2018-04-04T23:06:57.137Z] Time:          Thu Apr 05 2018 09:06:57 GMT+1000 (AEST)
+[debug] [2018-04-04T23:06:57.137Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T23:06:57.155Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T23:06:57.155Z] > authorizing via signed-in user
+[debug] [2018-04-04T23:06:57.158Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toy-chat  
+  
+ Thu Apr 05 2018 09:06:57 GMT+1000 (AEST)
+[debug] [2018-04-04T23:06:58.366Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:06:58.368Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/toy-chat/tokens  
+  
+ Thu Apr 05 2018 09:06:58 GMT+1000 (AEST)
+[debug] [2018-04-04T23:06:59.256Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'toy-chat'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-04T23:07:00.458Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T23:07:00.460Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Thu Apr 05 2018 09:07:00 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:00.460Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Thu Apr 05 2018 09:07:00 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:02.108Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:02.117Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-04T23:07:02.119Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/toy-chat  
+  
+ Thu Apr 05 2018 09:07:02 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:03.436Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:03.436Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/171073444580:getServerAppConfig  
+  
+ Thu Apr 05 2018 09:07:03 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:04.487Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T23:07:04.489Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/toy-chat/configs  
+  
+ Thu Apr 05 2018 09:07:04 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:05.075Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.54 KB) for uploading
+[debug] [2018-04-04T23:07:05.514Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions:generateUploadUrl  
+  
+ Thu Apr 05 2018 09:07:05 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:06.091Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:06.092Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/cd82663e-b4e6-452b-b8db-499c4b98fd4a.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522885025&Signature=bf%2FPz%2BShW4E5%2BYNydR%2F3jdUqZNH2o%2Bw6er6d%2F4eM%2Fr9vbDn%2FwgfTpLRMmJ34u3hYnx%2BYhkBJ4Om98KNhbakUUOBw9CJssG0Ajx31gEKG9B%2BH1C5ZPJBg5VUVrZnj3Ha%2FmBN8mtiSdZcFdPJT3YYxM5mqzfF%2FtnNQUxY%2FHkJAxG6PHN6GVbUkFStWUpQKEk116JggSIDvhf%2Bo1DIHmQU7t4ecVsSwcLfoGy4x6YVqXEjmT6AHNma7Xh6JObdMoTNIHxhgqEu%2FzDIXbat4epjb1YburUW9xBeby7eVadvILnuqM5Y%2F%2BILsO1WK4mLX8lN6saox6j5NgPc4cx6DsOACCA%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1574,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/n2/bt4pmfkd4b1fdc8g4rb10zw80000gp/T/firebase-functions-17448gpeuie6xap5B.zip',
+  fd: 20,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1574 } 
+ Thu Apr 05 2018 09:07:06 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:07.123Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-04-04T23:07:07.126Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions  
+  
+ Thu Apr 05 2018 09:07:07 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:07.527Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function newMessageAlert...
+[debug] [2018-04-04T23:07:07.533Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}","eventType":"providers/google.firebase.database/eventTypes/ref.write","service":"firebaseio.com"}}
+[debug] [2018-04-04T23:07:07.535Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions/newMessageAlert 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/cd82663e-b4e6-452b-b8db-499c4b98fd4a.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522885025&Signature=bf%2FPz%2BShW4E5%2BYNydR%2F3jdUqZNH2o%2Bw6er6d%2F4eM%2Fr9vbDn%2FwgfTpLRMmJ34u3hYnx%2BYhkBJ4Om98KNhbakUUOBw9CJssG0Ajx31gEKG9B%2BH1C5ZPJBg5VUVrZnj3Ha%2FmBN8mtiSdZcFdPJT3YYxM5mqzfF%2FtnNQUxY%2FHkJAxG6PHN6GVbUkFStWUpQKEk116JggSIDvhf%2Bo1DIHmQU7t4ecVsSwcLfoGy4x6YVqXEjmT6AHNma7Xh6JObdMoTNIHxhgqEu%2FzDIXbat4epjb1YburUW9xBeby7eVadvILnuqM5Y%2F%2BILsO1WK4mLX8lN6saox6j5NgPc4cx6DsOACCA%3D%3D',
+  name: 'projects/toy-chat/locations/us-central1/functions/newMessageAlert',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write',
+     service: 'firebaseio.com' } } 
+ Thu Apr 05 2018 09:07:07 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:08.030Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:08.033Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1YzYXZOMHpFeEFV  
+  
+ Thu Apr 05 2018 09:07:08 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:08.455Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:10.459Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1YzYXZOMHpFeEFV  
+  
+ Thu Apr 05 2018 09:07:10 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:10.835Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:12.839Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1YzYXZOMHpFeEFV  
+  
+ Thu Apr 05 2018 09:07:12 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:13.838Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:15.843Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1YzYXZOMHpFeEFV  
+  
+ Thu Apr 05 2018 09:07:15 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:16.228Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:18.231Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1YzYXZOMHpFeEFV  
+  
+ Thu Apr 05 2018 09:07:18 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:18.603Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:20.605Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1YzYXZOMHpFeEFV  
+  
+ Thu Apr 05 2018 09:07:20 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:21.050Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:23.070Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1YzYXZOMHpFeEFV  
+  
+ Thu Apr 05 2018 09:07:23 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:23.510Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:07:25.513Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L1YzYXZOMHpFeEFV  
+  
+ Thu Apr 05 2018 09:07:25 GMT+1000 (AEST)
+[debug] [2018-04-04T23:07:25.930Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[newMessageAlert]: Successful update operation. 
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/toy-chat/overview
+[debug] [2018-04-04T23:16:41.723Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T23:16:41.728Z] Command:       /Users/michael/.nvm/versions/node/v6.9.0/bin/node /Users/michael/.nvm/versions/node/v6.9.0/bin/firebase deploy --only functions --debug
+[debug] [2018-04-04T23:16:41.729Z] CLI Version:   3.18.0
+[debug] [2018-04-04T23:16:41.729Z] Platform:      darwin
+[debug] [2018-04-04T23:16:41.730Z] Node Version:  v6.9.0
+[debug] [2018-04-04T23:16:41.730Z] Time:          Thu Apr 05 2018 09:16:41 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:41.731Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T23:16:41.748Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T23:16:41.748Z] > authorizing via signed-in user
+[debug] [2018-04-04T23:16:41.751Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/toy-chat  
+  
+ Thu Apr 05 2018 09:16:41 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:43.178Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:16:43.179Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/toy-chat/tokens  
+  
+ Thu Apr 05 2018 09:16:43 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:43.984Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'toy-chat'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-04-04T23:16:45.192Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T23:16:45.194Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Thu Apr 05 2018 09:16:45 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:45.195Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/toy-chat?view=CONSUMER_VIEW  
+  
+ Thu Apr 05 2018 09:16:45 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:46.826Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:16:46.832Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-04T23:16:46.834Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/toy-chat  
+  
+ Thu Apr 05 2018 09:16:46 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:48.157Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:16:48.158Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/171073444580:getServerAppConfig  
+  
+ Thu Apr 05 2018 09:16:48 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:50.203Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T23:16:50.205Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/toy-chat/configs  
+  
+ Thu Apr 05 2018 09:16:50 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:50.818Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.57 KB) for uploading
+[debug] [2018-04-04T23:16:51.292Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions:generateUploadUrl  
+  
+ Thu Apr 05 2018 09:16:51 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:52.252Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:16:52.254Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/17ba943a-6a39-4413-bc67-574cf843bb16.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522885611&Signature=jVPcoxNCmtFIktqgSHywV2Oj196RZDge%2FmcjNUtu2qe7zFEb5jD44xxONxvBGEZaB33%2BBlcrr5bGNPhmezN9zA4aNdpHkxj1khZMrxOhIIrzpSDRLe1sbWVxlHvXOSFZBwIjK3fWby53K1RneQlUfSoSVxgE5aIpB349kIAH8rGUTDLpApxEpsBkD42hI6iNoAAIA1o0d2mdZTqVK1tFEIt6U0GYhP0e%2BX%2BJ25Votujq9T9qR4yP%2FvCmOktj1CUieRXlROaPaqBIK2wRGrntnQB%2BCnEyJv1d9gsIr7cAQXKeC5PMj01cKapUw%2F6bsXAG40c9STIgO8uXOELMF2GphQ%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1605,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/n2/bt4pmfkd4b1fdc8g4rb10zw80000gp/T/firebase-functions-17639z0kaGCdYGWl2.zip',
+  fd: 20,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1605 } 
+ Thu Apr 05 2018 09:16:52 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:53.214Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-04-04T23:16:53.217Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions  
+  
+ Thu Apr 05 2018 09:16:53 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:53.795Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function newMessageAlert...
+[debug] [2018-04-04T23:16:53.801Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}","eventType":"providers/google.firebase.database/eventTypes/ref.write","service":"firebaseio.com"}}
+[debug] [2018-04-04T23:16:53.803Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/toy-chat/locations/us-central1/functions/newMessageAlert 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-cba3285c-c64d-4332-91ef-ae67598cc34f/17ba943a-6a39-4413-bc67-574cf843bb16.zip?GoogleAccessId=171073444580@cloudservices.gserviceaccount.com&Expires=1522885611&Signature=jVPcoxNCmtFIktqgSHywV2Oj196RZDge%2FmcjNUtu2qe7zFEb5jD44xxONxvBGEZaB33%2BBlcrr5bGNPhmezN9zA4aNdpHkxj1khZMrxOhIIrzpSDRLe1sbWVxlHvXOSFZBwIjK3fWby53K1RneQlUfSoSVxgE5aIpB349kIAH8rGUTDLpApxEpsBkD42hI6iNoAAIA1o0d2mdZTqVK1tFEIt6U0GYhP0e%2BX%2BJ25Votujq9T9qR4yP%2FvCmOktj1CUieRXlROaPaqBIK2wRGrntnQB%2BCnEyJv1d9gsIr7cAQXKeC5PMj01cKapUw%2F6bsXAG40c9STIgO8uXOELMF2GphQ%3D%3D',
+  name: 'projects/toy-chat/locations/us-central1/functions/newMessageAlert',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/toy-chat/refs/conversations/{conversationId}/messages/{message}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write',
+     service: 'firebaseio.com' } } 
+ Thu Apr 05 2018 09:16:53 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:54.300Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:16:54.305Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L0xsSlRCYjJFa3V3  
+  
+ Thu Apr 05 2018 09:16:54 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:54.692Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:16:56.699Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L0xsSlRCYjJFa3V3  
+  
+ Thu Apr 05 2018 09:16:56 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:57.408Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:16:59.410Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L0xsSlRCYjJFa3V3  
+  
+ Thu Apr 05 2018 09:16:59 GMT+1000 (AEST)
+[debug] [2018-04-04T23:16:59.830Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:17:01.837Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L0xsSlRCYjJFa3V3  
+  
+ Thu Apr 05 2018 09:17:01 GMT+1000 (AEST)
+[debug] [2018-04-04T23:17:02.289Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:17:04.294Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L0xsSlRCYjJFa3V3  
+  
+ Thu Apr 05 2018 09:17:04 GMT+1000 (AEST)
+[debug] [2018-04-04T23:17:04.695Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:17:06.711Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L0xsSlRCYjJFa3V3  
+  
+ Thu Apr 05 2018 09:17:06 GMT+1000 (AEST)
+[debug] [2018-04-04T23:17:07.225Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:17:09.231Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L0xsSlRCYjJFa3V3  
+  
+ Thu Apr 05 2018 09:17:09 GMT+1000 (AEST)
+[debug] [2018-04-04T23:17:09.645Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T23:17:11.647Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/dG95LWNoYXQvdXMtY2VudHJhbDEvbmV3TWVzc2FnZUFsZXJ0L0xsSlRCYjJFa3V3  
+  
+ Thu Apr 05 2018 09:17:11 GMT+1000 (AEST)
+[debug] [2018-04-04T23:17:12.089Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[newMessageAlert]: Successful update operation. 
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/toy-chat/overview
